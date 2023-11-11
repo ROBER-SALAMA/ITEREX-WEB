@@ -16,7 +16,7 @@
       <SideMenu 
       :show-side-modal="showModal"
       @set-show-side-modal="showModal = !showModal"
-      title=""
+      title="iterex"
       :size="'w-[27%]'">
         <h1>hola</h1>
       </SideMenu>
@@ -51,14 +51,25 @@
   
       </header>
       <hr style="color: black;">
-      
-  
+    <!-- component blog -->
+    <div class="bg-yellow-300 flex items-center overflow-hidden">
+      <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 mx-auto">
+        <div class="md:flex items-center">
+          <div class="w-full">
+            <div class="">
+
+              <slot name="blog" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   </template>
   
   <script lang="ts" setup>
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import SideMenu from './SideMenu.vue';
+  import { FontAwesomeIcon } from '../../plugin/font-awesome';
+  import SideMenu from '../global/SideMenu.vue';
   import { ref } from 'vue';
 
   const showModal = ref(false);

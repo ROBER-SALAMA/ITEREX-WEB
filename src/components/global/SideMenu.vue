@@ -18,7 +18,7 @@
 </template>
   
 <script lang="ts" setup>
-import { FontAwesomeIcon } from "../plugin/font-awesome";
+import { FontAwesomeIcon } from "../../plugin/font-awesome";
 type Emits = {
   (Event: "SetShowSideModal"): void;
 };
