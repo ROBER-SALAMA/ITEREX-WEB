@@ -1,12 +1,33 @@
 <template>
     <div class="antialiased bg-white borde">
       <header class="lg:px-16 px-6 bg-c flex flex-wrap items-center lg:py-0 py-2">
-        <div class="flex-1 flex justify-between items-center">
+        <button
+        @click="
+          showModal = true;
+          modalType = 'view';
+        "
+        class="flex items-center font-semibold py-2 px-4 m-4"
+        
+        @mouseover="isRolHovered = true"
+        @mouseleave="isRolHovered = false"
+      >
+      <font-awesome-icon class="w-8 h-8" icon="fa-solid fa-bars" style="color: #cc2e2e;" />
+      </button>
+      <SideMenu 
+      :show-side-modal="showModal"
+      @set-show-side-modal="showModal = !showModal"
+      title=""
+      :size="'w-[27%]'">
+        <h1>hola</h1>
+      </SideMenu>
+        <div class="flex-1 flex  items-center">
           <a href="#">
-            <img src="https://firebasestorage.googleapis.com/v0/b/iterex-5de03.appspot.com/o/ItterEx%20LOGO.png?alt=media&token=b4ee8a5f-7a58-46d3-a338-744b5d1c5e13" alt=""
+            <img src="https://firebasestorage.googleapis.com/v0/b/iterex-5de03.appspot.com/o/ItterEx%20LOGO.png?alt=media&token=b4ee8a5f-7a58-46d3-a338-744b5d1c5e13" alt="logo-iterex"
             width="60px" height="60px"
             >
           </a>
+          <span class="m-4 font-bold text-lg" 
+          style="font-family: 'Montserrat', sans-serif;">ITEREX</span>
         </div>
         <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current #31241E"
             xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
@@ -36,7 +57,14 @@
   </template>
   
   <script lang="ts" setup>
-  
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+  import SideMenu from './SideMenu.vue';
+  import { ref } from 'vue';
+
+  const showModal = ref(false);
+  const modalType = ref("")
+  const isRolHovered = ref(false)
+
   </script>
   <style lang="scss" scoped>#menu-toggle:checked+#menu {
     display: block;
