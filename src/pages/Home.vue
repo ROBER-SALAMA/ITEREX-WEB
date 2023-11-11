@@ -1,14 +1,11 @@
 <template>
     <div>
-        <sideBar></sideBar>
+        <Blog></Blog>
     </div>
 </template>
 
 <script lang="ts" setup>
-    import sideBar from '../components/sideBar.vue';
+import Blog from '../components/home/Blog.vue';
 </script>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
